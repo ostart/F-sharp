@@ -1,7 +1,7 @@
 // 7.1.1
 let rec fibo = function
-  | n when n <= 1 -> 0
-  | 2 -> 1
+  | n when n <= 0 -> 0
+  | 1 -> 1
   | n -> fibo(n-2) + fibo(n-1)
 
 // 7.1.2
