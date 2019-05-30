@@ -3,7 +3,7 @@ let rec iterup x acc =
   else iterup (x-1) (x::acc)
 
 let rec itereven x acc = 
-  if (x=0) then acc
+  if (x=0) then (x::acc)
   elif (x%2=0) then itereven (x-1) (x::acc)
   else itereven (x-1) (acc)
 
@@ -18,4 +18,4 @@ let rec dnto = function
 
 // // 34.3
 let rec evenn = function
-  | n -> itereven (2*n) []
+  | n -> itereven (2*n-1) []
