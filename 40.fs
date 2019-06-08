@@ -61,19 +61,19 @@ let rec plus (xs1, xs2) =
     if(tail1.Length = 0 && tail2.Length = 0) then
       if(head1>head2) then acc@[head2;head1]
       elif(head1<head2) then acc@[head1;head2]
-      else acc@[head1]
+      else acc@[head1;head2]
     elif(tail1.Length = 0) then
       if(head1>head2) then iter lst1 tail2 (acc@[head2])
       elif(head1<head2) then acc@[head1]@lst2
-      else acc@[head1]@tail2
+      else acc@[head1;head2]@tail2
     elif(tail2.Length = 0) then
       if(head1>head2) then acc@[head2]@lst1
       elif(head1<head2) then iter tail1 lst2 (acc@[head1]) 
-      else acc@[head1]@tail1
+      else acc@[head1;head2]@tail1
     else
       if(head1>head2) then iter lst1 tail2 (acc@[head2])
       elif(head1<head2) then iter tail1 lst2 (acc@[head1]) 
-      else iter tail1 tail2 (acc@[head1])
+      else iter tail1 tail2 (acc@[head1;head2])
 
   iter xs1 xs2 []
 
