@@ -10,7 +10,7 @@ let rec alternate n =
       else alternate(n-1) - n
 
 // 49.5.1
-let even_seq = Seq.initInfinite (fun i -> i + i)
+let even_seq = Seq.initInfinite (fun i -> 2*i + 2)
 
 // 49.5.2
 let fac_seq = Seq.initInfinite (factorial)
