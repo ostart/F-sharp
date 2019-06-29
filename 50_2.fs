@@ -32,3 +32,14 @@ let seq_seq = seq {
 //       yield! seq [-i;i]
 //       i <- i + 1
 //        }
+
+// Решение учителя:
+// let rec fac n res = seq {
+//   yield res
+//   yield! fac (n+1) (res*n)
+// }
+
+// let fac_seq = seq {
+//   yield 1
+//   yield! fac 2 1
+// }
