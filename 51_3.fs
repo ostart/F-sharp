@@ -1,5 +1,9 @@
 type 'a cell = Nil | Cons of 'a * Lazy<'a cell>
 
+// let rec nat (n:int) : 'a cell = Cons (n, lazy(nat(n+1)))
+
+// let n0 = nat 0
+
 let hd (s : 'a cell) : 'a =
   match s with
     Nil -> failwith "hd"
@@ -21,3 +25,9 @@ let rec nth (s : 'a cell) (n : int) : 'a =
 
 // например, получить 30000-й элемент:
 // nth n0 30000
+
+// решение учителя:
+// let rec nth (s : 'a cell) (n : int) : 'a = 
+//   match n with 
+//   | 0 -> hd s 
+//   | _ -> nth ((tl s).Force()) (n-1)
